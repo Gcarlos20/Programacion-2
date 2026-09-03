@@ -26,3 +26,26 @@
 
 # 7 Cómo se realiza un merge y qué conflictos pueden surgir? ¿Cómo se resuelven?
     > Un merge en Git se realiza para integrar los cambios de una rama en otra. Primero se cambia a la rama que recibirá los cambios, por ejemplo, main, y luego se ejecuta git merge nombre-rama. Si los cambios de ambas ramas no se contradicen, Git los integra automáticamente. Sin embargo, puede surgir un conflicto cuando dos ramas modifican de manera diferente la misma parte de un archivo. Para resolverlo, se debe abrir el archivo en conflicto, decidir qué cambios conservar o combinar, eliminar las marcas de conflicto, guardar el archivo y después ejecutar git add y git commit para finalizar el merge.
+
+# 8 ¿Cómo funciona el área de staging (git add) y qué pasa si omito este paso?
+    >El área de staging es una zona intermedia donde Git prepara los cambios que se van a incluir en el próximo commit. Cuando se utiliza git add, los cambios seleccionados pasan del Working Directory al Staging Area, permitiendo elegir exactamente qué modificaciones se quieren guardar en el historial. Luego, con git commit, Git registra esos cambios en el repositorio.
+
+# 9 ¿Qué es el archivo .gitignore y cómo influye en el seguimiento de archivos?
+    >El archivo .gitignore es un archivo de configuración que indica a Git qué archivos o carpetas debe ignorar y no incluir en el seguimiento del repositorio. Se utiliza principalmente para evitar subir archivos innecesarios, temporales o que contengan información sensible, como archivos de configuración, contraseñas, carpetas generadas por los IDE o dependencias.
+
+# 10  ¿Cuál es la diferencia entre un “commit amend” (--amend) y un nuevo commit?
+    >La diferencia es que un **commit --amend** permite **modificar el último commit existente**, mientras que un **nuevo commit** crea un registro completamente nuevo en el historial. Con git commit --amend se pueden corregir archivos o modificar el mensaje del último commit sin crear otro commit adicional. En cambio, al realizar un nuevo `git commit`, Git agrega una nueva versión al historial manteniendo el commit anterior. El `--amend` se utiliza principalmente para corregir errores o agregar cambios que olvidamos incluir en el último commit.
+
+# 11 ¿Cómo se utiliza git stash y en qué escenarios es útil?
+    >git stash se utiliza para guardar temporalmente los cambios que tienes en tu Working Directory sin hacer un commit. Esto permite dejar el proyecto limpio para realizar otra tarea y posteriormente recuperar esos cambios.
+
+# 12 . ¿Qué mecanismos ofrece Git para deshacer cambios (por ejemplo, git reset, git revert, git checkout)
+    > Git ofrece varios mecanismos para deshacer cambios, dependiendo de qué se quiera modificar. git reset permite mover el puntero de la rama hacia otro commit y puede utilizarse para quitar cambios del staging o eliminar commits del historial local. git revert crea un nuevo commit que deshace los cambios realizados por un commit anterior, por lo que es una opción segura cuando el historial ya fue compartido con otros. Por otro lado, git checkout permite cambiar de rama y, en versiones tradicionales de Git, también recuperar archivos o estados anteriores. En resumen, reset modifica el historial, revert conserva el historial creando un nuevo commit y checkout se utiliza principalmente para cambiar de rama o recuperar versiones anteriores de archivos.
+
+# 13  . ¿Cómo funciona la configuración de remotos (origin, upstream) y qué comandos uso para gestión de forks?
+
+    >Los remotos en Git permiten conectar el repositorio local con repositorios alojados en plataformas como GitHub. El remoto origin suele ser el repositorio principal desde el cual se clona o al que se suben los cambios. En el caso de un fork, normalmente origin apunta al repositorio propio y upstream apunta al repositorio original del que se creó el fork.
+
+# 14 Cómo puedo inspeccionar el historial de commits (por ejemplo, git log, git diff, git show)? 
+    > Git permite inspeccionar el historial y los cambios mediante varios comandos. git log muestra la lista de commits realizados, incluyendo información como el autor, la fecha y el mensaje. git diff permite comparar cambios entre archivos, commits o estados del proyecto, mostrando qué líneas fueron agregadas, modificadas o eliminadas. Por otro lado, git show permite consultar los detalles de un commit específico, incluyendo los cambios realizados en ese commit.
+
