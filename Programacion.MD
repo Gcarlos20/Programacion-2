@@ -32,4 +32,9 @@
     - procteted Dentro del mismo paquete y desde clases hijas
         
 
-## 22 
+## 22 Qué es una variable de entorno y por qué son importantes para Java o la programación en general?
+    >> Una variable de entorno es un Valor almacenando en el sistema Operativo que un programa puede consultar
+    >> mientras se esta ejecutando sirve para guardar Informacion de configuracion fuera del codigo
+
+
+
